@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class CalcManager : MonoBehaviour
@@ -19,13 +17,14 @@ public class CalcManager : MonoBehaviour
 
     public void OnClickGood()
     {
-        if(count < 10)
-        {
-            count++;
-
-        } else
+        if (IsAbove(count))
         {
             count = 0;
+
+        }
+        else
+        {
+            count++;
         }
 
         Count.text = count.ToString();
@@ -34,5 +33,10 @@ public class CalcManager : MonoBehaviour
     public void OnClickResest()
     {
         Count.text = "0";
+    }
+
+    public bool IsAbove(int count)
+    {
+        return count > 10;
     }
 }
