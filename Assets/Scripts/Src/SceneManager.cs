@@ -1,15 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-public class CalcManager : MonoBehaviour
+public class SceneManager : MonoBehaviour
 {
     public Text Count;
     public Button Good;
     public Button Reset;
 
     private int count = 0;
+
+    private Util util = new Util();
 
     // Start is called before the first frame update
     void Start()
@@ -19,13 +19,14 @@ public class CalcManager : MonoBehaviour
 
     public void OnClickGood()
     {
-        if(count < 10)
-        {
-            count++;
-
-        } else
+        if (util.IsOver(count))
         {
             count = 0;
+
+        }
+        else
+        {
+            count++;
         }
 
         Count.text = count.ToString();
