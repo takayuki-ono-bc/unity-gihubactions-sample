@@ -5,7 +5,7 @@ env:
 
 jobs:
   setup:
-    runs-on: macos-10.15
+    runs-on: ubuntu-latest
     steps:
      - name: Checkout repository
        uses: actions/checkout@v2
