@@ -1,0 +1,41 @@
+name: Unity Workflow Sample
+on: [push]
+env:
+  UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+
+jobs:
+  setup:
+    runs-on: macos-10.15
+    # Checkout
+    - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          lfs: true
+    
+     # Cache
+     - uses: actions/cache@v1.1.0
+        with:
+          path: Library
+          key: Library
+
+    - uses: webbertakken/unity-test-runner@v1.4
+      with:
+        unityVersion: 2019.1.5f1
+
+    - uses: actions/upload-artifact@v1
+      with:
+        name: Test results
+        path: artifacts
+
+    # Build
+      - name: Build project
+        uses: webbertakken/unity-builder@v0.10
+        with:
+          unityVersion: 2019.1.5f1
+          targetPlatform: Android
+
+      # Output
+      - uses: actions/upload-artifact@v1
+        with:
+          name: Build
+          path: build
