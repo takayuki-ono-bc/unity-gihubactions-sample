@@ -37,6 +37,7 @@ jobs:
      - name: Build project
        uses: webbertakken/unity-builder@v0.10
        with:
+         customImage: 'unityci/editor:2019.1.15f1-android-0'
          unityVersion: 2019.1.5f1
          targetPlatform: Android
 
