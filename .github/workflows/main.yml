@@ -14,8 +14,8 @@ jobs:
    
      - uses: actions/cache@v1.1.0
        with:
-         path: unity-gihubactions-sample/Library
-         key: Library-unity-gihubactions-sample
+         path: ./unity-gihubactions-sample/Library
+         key: Library
 
 #     - uses: webbertakken/unity-test-runner@v1.4
 #       with:
