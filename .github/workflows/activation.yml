@@ -1,7 +1,6 @@
 name: Acquire activation file
 # Work when you need
-on: push 
-#workflow_dispatch 
+on: workflow_dispatch 
 
 jobs:
   activation:
