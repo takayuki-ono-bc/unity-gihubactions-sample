@@ -1,6 +1,7 @@
 name: Acquire activation file
 # Work when you need
-on: workflow_dispatch 
+on: push 
+#workflow_dispatch 
 
 jobs:
   activation:
@@ -10,7 +11,7 @@ jobs:
      # R:equest manual activation file
     - name: Request manual activation file
       id: getManualLicenseFile
-      uses: webbertakken/unity-request-manual-activation-file@v1.1
+      uses: webbertakken/unity-request-manual-activation-file@v2.0-alpha-1
       with:
         unityVersion: 2019.4.5f1
     - name: Expose as artifact
