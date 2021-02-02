@@ -5,21 +5,15 @@ env:
 
 jobs:
   setup:
-    runs-on: windows-latest 
+    runs-on: ubuntu-latest
     steps:
      - name: Checkout repository
        uses: actions/checkout@v2
        with:
          lfs: true
-         path: unity-gihubactions-sample 
-     - name: set up JDK 1.8
-       uses: actions/setup-java@v1
-       with:
-         java-version: 1.8 
-   
      - uses: actions/cache@v1.1.0
        with:
-         path: Library
+         path: ./unity-gihubactions-sample/Library
          key: Library
 
 #     - uses: webbertakken/unity-test-runner@v1.4
@@ -32,9 +26,10 @@ jobs:
 #        path: artifacts
 
      - name: Build project
-       uses: webbertakken/unity-builder@v0.10
+       uses: webbertakken/unity-builder@v2.0-alpha-6
        with:
-         unityVersion: 2019.1.5f1
+         customImage: 'unityci/editor:2019.4.5f1-android-0.3.0'
+         unityVersion: 2019.4.5f1
          targetPlatform: Android
 
      - uses: actions/upload-artifact@v1
