@@ -27,7 +27,7 @@ jobs:
 #        path: artifacts
 
      - name: Build project
-       uses: webbertakken/unity-builder@v1.5
+       uses: webbertakken/unity-builder@v2.0-alpha-6
        with:
          customImage: 'unityci/editor:2019.4.5f1-android-0.3.0'
          unityVersion: 2019.4.5f1
