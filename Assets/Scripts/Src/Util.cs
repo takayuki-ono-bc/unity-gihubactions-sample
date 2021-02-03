@@ -6,6 +6,6 @@ public class Util
 {
     public bool IsOver(int count)
     {
-        return count >= 10;
+        return count > 10;
     }
 }
