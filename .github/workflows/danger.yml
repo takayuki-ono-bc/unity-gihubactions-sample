@@ -1,0 +1,26 @@
+name: PR Check by Danger
+on: 
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  danger:
+    runs-on: ubuntu-latest
+    
+    steps: 
+      - uses: actions/checkout@master
+      # 環境設定
+      - name: setup
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.x'
+          architecture: 'x64'
+      - name: Setup Danger
+        run: |
+          gem install danger danger-resharper_inspectcode
+      - name: Run Danger
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: danger
+      
