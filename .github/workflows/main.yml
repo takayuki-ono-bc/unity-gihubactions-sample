@@ -16,7 +16,7 @@ jobs:
          path: ./unity-gihubactions-sample/Library
          key: Library
 
-     - uses: webbertakken/unity-test-runner@v2.0-alpha-1
+     - uses: webbertakken/unity-test-runner@v1.4
        with:
         unityVersion: 2019.4.5f1
 
@@ -25,14 +25,14 @@ jobs:
         name: Test results
         path: artifacts
 
-     - name: Build project
-       uses: webbertakken/unity-builder@v2.0-alpha-6
-       with:
-         customImage: 'unityci/editor:2019.4.5f1-android-0.3.0'
-         unityVersion: 2019.4.5f1
-         targetPlatform: Android
+#     - name: Build project
+#       uses: webbertakken/unity-builder@v2.0-alpha-6
+#       with:
+#         customImage: 'unityci/editor:2019.4.5f1-android-0.3.0'
+#         unityVersion: 2019.4.5f1
+#         targetPlatform: Android
 
-     - uses: actions/upload-artifact@v1
-       with:
-         name: Build
-         path: build
+#     - uses: actions/upload-artifact@v1
+#       with:
+#         name: Build
+#         path: build
