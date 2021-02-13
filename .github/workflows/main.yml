@@ -23,7 +23,7 @@ jobs:
      - uses: actions/upload-artifact@v1
        with:
         name: Test results
-       path: artifacts
+        path: artifacts
 
      - name: Build project
        uses: webbertakken/unity-builder@v2.0-alpha-6
