@@ -16,7 +16,7 @@ jobs:
          path: ./unity-gihubactions-sample/Library
          key: Library
 
-     - uses: webbertakken/unity-test-runner@v1.4@v2.0-alpha-6
+     - uses: webbertakken/unity-test-runner@v2.0-alpha-6
        with:
         unityVersion: 2019.4.5f1
 
