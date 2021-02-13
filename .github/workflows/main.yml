@@ -13,17 +13,17 @@ jobs:
          lfs: true
      - uses: actions/cache@v1.1.0
        with:
-         path: ./unity-gihubactions-sample/Library
+         path: ./Library
          key: Library
 
-#     - uses: webbertakken/unity-test-runner@v1.4
-#       with:
-#        unityVersion: 2019.1.5f1
+     - uses: webbertakken/unity-test-runner@v1.4
+       with:
+        unityVersion: 2019.1.5f1
 
-#     - uses: actions/upload-artifact@v1
-#       with:
-#        name: Test results
-#        path: artifacts
+     - uses: actions/upload-artifact@v1
+       with:
+        name: Test results
+       path: artifacts
 
      - name: Build project
        uses: webbertakken/unity-builder@v2.0-alpha-6
